@@ -3,23 +3,21 @@ var queryURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_we
 
 //Request URL Data
 d3.json(queryURL, function(response){
-   console.log(response)
-   createFeatures(response. features);
-   console.log(response.features[0]. geometry.coordinates[3])
+   createFeatures(response. features) 
+// Function to grab data
+function createFeatures(quakedata);
 });
 
-// Function to grab data
-
-function createFeatures(quakedata) {
-
-    function onEachFeature(feature, layer) {
-      layer.bindPopup("<h3>" + feature.properties.place + "</h3><hr><p><strong>Magnitude: </strong>" + 
-      feature.properties.mag + "<br><strong>Depth: </strong>" +
-      feature.geometry.coordinates[3] + " m <br> <strong>Time: </strong>" + 
-      new Date(feature.properties.time) + "</p>")
+function onEachFeature(feature, layer) {
+    layer.bindPopup("<h3>" + feature.properties.place + "</h3><hr><p><strong>Magnitude: </strong>" + 
+    feature.properties.mag + "<br><strong>Depth: </strong>" +
+    new Date(feature.properties.time) + "</p>")
   }  
     
-    function markerColor(d) {
+   
+  
+  
+  function markerColor(d) {
         return d > 9 ? 'Blue':
         d >= 7 ? 'OrangeRed':
         d >= 5 ? 'Orange':
@@ -27,8 +25,7 @@ function createFeatures(quakedata) {
         d >= 2 ? 'Red':
         d >= 1 ? 'Green':
 
-     {}
-}
+     {
     // Setting marker size based on magnitude
     function markerSize(magnitude) {
         return magnitude *5;
