@@ -40,7 +40,7 @@ var baseLayers = {
 }
 
 var overlays = {
-    //"Fault Lines": faultline,
+    "Fault Lines": faultline,
     "Earthquakes": earthquakeweek,
     
 }
@@ -87,7 +87,7 @@ var earthquakes = d3.json(url).then(data => {
             color:setOutline(z),
             fillColor:setColor(mag),
             fillOpacity:.5,
-            radius:(5000+(5000*mag)+10**(mag))
+            radius:(3000+(3000*mag)+10**(mag))
         }).bindPopup(`<h1>Location</h1><hr><h3>${place}</h3><hr><h1>Time:</h1><h3>${new Date(time)}</h3><hr><h1>Magnitued ${mag}</h1>`).addTo(myMap)
     
     }
