@@ -8,7 +8,7 @@ d3.json(queryURL, function(response){
    console.log(response.features[0]. geometry.coordinates[3])
 });
 
-// Functiom to grab data
+// Function to grab data
 
 function createFeatures(quakedata) {
 
@@ -104,5 +104,7 @@ function createFeatures(quakedata) {
         };
         legend.addTo(mymap);
     
-}    };
-    
+}
+
+};
+createMap()
